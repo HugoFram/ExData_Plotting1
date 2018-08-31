@@ -1,6 +1,6 @@
 require(dplyr)
 
-## Download and unzip the dataset if it does not already exist
+# Download and unzip the dataset if it does not already exist
 if (!file.exists("household_power_consumption.txt")) {
     url = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
     download.file(url, "electricityPowerConsumptionDataset.zip")
@@ -17,4 +17,4 @@ householdPowerConsumption <- mutate(householdPowerConsumption, DateAndTime = as.
 
 # Extract the data for only 2007-02-01 and 2007-02-02
 householdPowerConsumption <- filter(householdPowerConsumption, 
-                                    difftime(DateAndTime, as.POSIXct("2007-02-01")) > 0 &  difftime(DateAndTime, as.POSIXct("2007-02-02")) < 0)
+                                    difftime(DateAndTime, as.POSIXct("2007-02-01")) > 0 &  difftime(DateAndTime, as.POSIXct("2007-02-03")) < 0)
