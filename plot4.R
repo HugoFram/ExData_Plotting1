@@ -1,6 +1,9 @@
 # Download, read and filter data for the assignment
 source("readData.R")
 
+# Open png device
+png("plot4.png", width = 480, height = 480)
+
 # Set the plots layout
 par(mfcol = c(2,2), mar = c(4,4,2,2))
 
@@ -27,3 +30,6 @@ with(householdPowerConsumption, plot(DateAndTime, Global_reactive_power,
                                      type = "l",
                                      xlab = "datetime",
                                      ylab = "Global_reactive_power"))
+
+# Save the plot as a PNG
+dev.off()
